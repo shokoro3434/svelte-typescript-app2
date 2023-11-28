@@ -12,8 +12,6 @@ export const fetchTodos = () => {
     todos.set(await res.json());
   });
 };
-//console.log("#####"+process.env.API_KEY);
-var TOKEN = 'secret_wjptfJTIuyIP388Xc3TBdW37KZOANxMm6cyfhW4LTZw';
 
 export const postDefenses = () => {
   onMount(async () => {
@@ -21,7 +19,7 @@ export const postDefenses = () => {
 //      "https://api.notion.com/v1/databases/324a458fe0244b64b2159ce2b97ebb73/query",{
         "http://localhost:8080/v1/databases/324a458fe0244b64b2159ce2b97ebb73/query",{
     headers: {
-          'Authorization': 'Bearer '+TOKEN,
+          'Authorization': 'Bearer '+process.env.API_KEY,
           'Content-Type': 'application/json',
           'Notion-Version': '2022-06-28'
         },
