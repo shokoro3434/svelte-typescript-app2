@@ -17,6 +17,7 @@
 		}
 	}
 	console.log(process.env.API_KEY)
+	console.log(process.env.DB_ID)
 	//fetchTodos();
 	console.log("#####")
 //	console.log(process.env.API_KEY)
