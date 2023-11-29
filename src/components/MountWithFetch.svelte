@@ -1,9 +1,9 @@
 <script lang="ts">
   import { todos } from "../stores/ToDo";
-  import { defenses } from "../stores/Defense";
-  import { fetchDefenses } from "../hooks/DefensesHook.svelte";
+  import { services } from "../stores/Service";
+  import { fetchServices } from "../hooks/ServiceHook.svelte";
   import { fetchTodos } from "../hooks/ToDoHook.svelte";
-  fetchDefenses();
+  fetchServices();
   fetchTodos();
 </script>
 
@@ -24,7 +24,7 @@
 <h2>受けプレイ</h2>
 <ul>
   <div>
-    {#each $defenses as rec}
+    {#each $services as rec}
       <li>
         { rec.properties.id.number }
         { rec.properties.name.rich_text[0].plain_text }

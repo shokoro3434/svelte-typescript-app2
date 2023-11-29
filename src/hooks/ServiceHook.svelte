@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 import { onMount } from "svelte";
-import { defenses } from "../stores/Defense";
+import { services } from "../stores/Service";
 
 const sort:string = `{ 
     "sorts": [ 
@@ -11,11 +11,10 @@ const sort:string = `{
     ]
 }`;
 
-const END_POINT: string = 'http://localhost:8080/v1/databases/' + '324a458fe0244b64b2159ce2b97ebb73' + '/query';
-export function fetchDefenses () {
+const END_POINT: string = 'http://localhost:8080/v1/databases/' + process.env.DB_ID + '/query';
+export function fetchServices () {
   onMount(async () => {
     const res = await fetch(
-      //      "https://api.notion.com/v1/databases/324a458fe0244b64b2159ce2b97ebb73/query",{
       END_POINT, {
       headers: {
         'Authorization': 'Bearer ' + process.env.API_KEY,
@@ -31,7 +30,7 @@ export function fetchDefenses () {
     });
     console.log(res);
     let o = JSON.parse(await res.text());
-    defenses.set(o.results);
+    services.set(o.results);
   });
 };
 </script>

@@ -36,5 +36,5 @@ const results = [
     }
 ]
 
-export const defenses = writable(results);
+export const services = writable(results);
 

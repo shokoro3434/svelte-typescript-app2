@@ -49,7 +49,10 @@ export default {
 			preprocess: sveltePreprocess({ sourceMap: !production }),
 			preprocess: sveltePreprocess({ 
 				sourceMap: !production,
-				replace: [['process.env.API_KEY', JSON.stringify(process.env.API_KEY)]]
+				replace: [
+					['process.env.API_KEY', JSON.stringify(process.env.API_KEY)],
+					['process.env.DB_ID', JSON.stringify(process.env.DB_ID)],
+				]
 			}),
 			compilerOptions: {
 				// enable run-time checks when not in production
